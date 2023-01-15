@@ -4,11 +4,25 @@
     align-items: center;
     height: 70px;
     padding-right: 50px;
-    gap: 20px;
     border-bottom: 1px solid rgb(139, 139, 139);
     
 }
 
+/* .search>div{
+    border: 1px solid red;
+    
+} */
+
 .search input {
     padding: 10px;
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+.search button{
+    border: none;
+    padding: 10px;
+    background: rgb(82, 82, 82);
+    color: white;
+    border-radius:0 5px 5px 0 ;
 }

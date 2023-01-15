@@ -5,7 +5,7 @@ import { StoreContext } from "../../Context/StoreContextProvider";
 function ProductCard({ data }) {
   const { state, dispatch } = useContext(StoreContext);
 
-  function handelAddtoCart() {
+  function handleAddtoCart() {
     const cart = state.cart;
     const isPresent = cart.filter((item) => item.id == data.id);
     if (isPresent.length == 0) {
@@ -25,7 +25,9 @@ function ProductCard({ data }) {
       <img src={data.imageURL} alt={data.imageURL} />
       <div>
         <h3>Rs. {data.price}</h3>
-        <button onClick={handelAddtoCart}>Add to Cart</button>
+        <h4>Color: {data.color}</h4>
+        <p>Type: {data.type}</p>
+        <button onClick={handleAddtoCart}>Add to Cart</button>
       </div>
     </div>
   );

@@ -19,3 +19,13 @@
     padding: 5px;
     border-radius: 5px;
 }
+
+@media (min-width: 100px) and (max-width: 399px) {
+    .filter{
+        width: 100px;
+        padding: 20px;
+    }
+    .filter select{
+        width: 50px;
+    }
+}

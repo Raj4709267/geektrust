@@ -9,6 +9,10 @@ const reducer=(state,action)=>{
         case "ADD_FILTER_DATA":{
             return {...state,display:payload}
         }
+        case "ADD_SEARCHED_DATA":{
+            return {...state,display:payload}
+        }
+        
         case "ADD_TO_CART":{
             return {...state,cart:[...state.cart,...payload]}
         }

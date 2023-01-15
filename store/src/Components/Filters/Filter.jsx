@@ -1,6 +1,5 @@
 import React from "react";
 import { useContext } from "react";
-import { useState } from "react";
 import { StoreContext } from "../../Context/StoreContextProvider";
 import style from "./Filter.module.css";
 

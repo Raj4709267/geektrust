@@ -8,24 +8,35 @@ function Cart() {
 
   const cart = state.cart;
 
-  function handelIncQuan(id) {
-    const data = cart.map((item) =>
-      item.id == id ? { ...item, quan: item.quan + 1 } : item
-    );
+  function handleIncQuan(id) {
+    const data = cart.map((item) => {
+      if (item.quan == item.quantity && item.id == id) {
+        // console.log(item.quanit)
+        alert("Max quanity reached");
+        return item;
+      } else {
+        return item.id == id ? { ...item, quan: item.quan + 1 } : item;
+      }
+    });
     dispatch({ type: "CHANGE_QUANT", payload: data });
   }
 
-  function handelDecQuan(id) {
-    const data = cart.map((item) =>
-      item.id == id ? { ...item, quan: item.quan - 1 } : item
-    );
+  function handleDecQuan(id) {
+    const data = cart.map((item) => {
+      if (item.quan == 1 && item.id == id) {
+        alert("Try to increase quantity");
+        return item;
+      } else {
+        return item.id == id ? { ...item, quan: item.quan - 1 } : item;
+      }
+    });
 
     dispatch({ type: "CHANGE_QUANT", payload: data });
   }
 
-  function handelDelete(id){
-    const data = cart.filter(item=>item.id!==id)
-    dispatch({type:"ITEM_DELETE",payload:data})
+  function handleDelete(id) {
+    const data = cart.filter((item) => item.id !== id);
+    dispatch({ type: "ITEM_DELETE", payload: data });
   }
 
   return (
@@ -36,16 +47,16 @@ function Cart() {
             <div>
               <img src={item.imageURL} alt={item.imageURL} />
               <div className={style.cartName}>
-                <h1>{item.name}</h1>
-                <h2>Rs. {item.price}</h2>
+                <h2>{item.name}</h2>
+                <h3>Rs. {item.price}</h3>
+                <div className={style.quantity}>
+                  <button onClick={() => handleDecQuan(item.id)}>-</button>
+                  {item.quan}
+                  <button onClick={() => handleIncQuan(item.id)}>+</button>
+                </div>
               </div>
               <div>
-                <button onClick={() => handelDecQuan(item.id)}>-</button>
-                {item.quan}
-                <button onClick={() => handelIncQuan(item.id)}>+</button>
-              </div>
-              <div>
-                <button onClick={()=>handelDelete(item.id)}>Delete</button>
+                <button className={style.delete} onClick={() => handleDelete(item.id)}>Delete</button>
               </div>
             </div>
           );

@@ -26,3 +26,36 @@
     justify-content: center;
     align-items: center;
 }
+
+.container button{
+    border: none;
+    background: #f0db4f;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+@media (min-width: 700px) and (max-width: 1100px) {
+    .container {
+        grid-template-columns: repeat(3, 30%);
+        gap: 20px;
+    }
+}
+
+
+@media (min-width: 400px) and (max-width: 699px) {
+    .container {
+        grid-template-columns: repeat(2, 45%);
+        gap: 20px;
+
+    }
+}
+
+
+@media (min-width: 100px) and (max-width: 399px) {
+    .container {
+        grid-template-columns: repeat(1, 90%);
+        gap: 20px;
+
+    }
+}

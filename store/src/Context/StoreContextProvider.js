@@ -10,7 +10,7 @@ const StoreContextProvider=({children})=>{
         count:0,
         products:[],
         display:[],
-        cart:[]
+        cart: []
     }
 
 
