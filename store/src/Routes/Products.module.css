@@ -1,0 +1,28 @@
+.products {
+    display: flex;
+    /* margin-top: 50px; */
+
+}
+
+/* .products>div{
+    border: 1px solid rgb(205, 65, 97);
+} */
+
+.container img {
+    width: 100%;
+}
+
+.container>div {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 20px;
+    border-radius: 7px;
+}
+
+.container {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(4, 20%);
+    gap: 3%;
+    justify-content: center;
+    align-items: center;
+}

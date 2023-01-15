@@ -1,0 +1,17 @@
+.cart img{
+    width: 100px;
+}
+.cart>div{
+    border: 1px solid red;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 50%;
+}
+
+/* 
+.cartName{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+} */
